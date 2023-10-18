@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {fetchAllPosts} from "./api/api";
+import { fetchAllPosts } from "../api/api";
 import PostList from './PostList';
 
 const GuestPost = () => {

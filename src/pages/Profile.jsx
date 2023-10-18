@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { userMessages } from '../../api/api';
+import { userMessages } from '../api/api';
 
 const Profile = () => {
     const token = localStorage.getItem('token');

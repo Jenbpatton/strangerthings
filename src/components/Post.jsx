@@ -18,7 +18,6 @@ const Post = () => {
                 setUsername(decodedToken.username);
             } catch (error) {
                 console.error('Error decoding token:', error);
-                // Handle decoding error here
             }
         }
     }, [token]);

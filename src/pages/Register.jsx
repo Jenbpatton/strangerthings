@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { registerUser } from '../../api/api';
+import { registerUser } from '../api/api';
 import { useOutletContext } from 'react-router-dom';
 
 const Register = () => {
@@ -10,8 +10,8 @@ const Register = () => {
     const [usernameErrorMessage, setUsernameErrorMessage] = useState('');
     const [passwordErrorMessage, setPasswordErrorMessage] = useState('');
     const [confirmPasswordErrorMessage, setConfirmPasswordErrorMessage] = useState('');
-    const [, setToken] = useOutletContext();
-    const [, setIsLoggedIn] = useOutletContext();
+    const [ , setToken] = useOutletContext();
+    const [ , setIsLoggedIn] = useOutletContext();
 
     async function submitRegistration(e) {
         e.preventDefault();

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from 'jwt-decode';
 import PostList from "./PostList";
-import {fetchAllPosts} from "./api/api";
+import { fetchAllPosts } from "../api/api";
 
 
 const UserPost = () => {

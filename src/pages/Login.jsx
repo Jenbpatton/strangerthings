@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { userLogin } from '../../api/api';
+import { userLogin } from '../api/api';
 import { useOutletContext } from 'react-router-dom';
 
 const UserLogin = () => {
@@ -35,10 +35,10 @@ const UserLogin = () => {
     return (
         <div className="panel">
             {isLoggedIn ? (
-                <h1>Welcome Back!</h1>
+                <h1>Hello!  Nice to see you again!</h1>
             ) : (
                 <>
-                    <h1>Log In</h1>
+                    <h1>Login</h1>
                     <form onSubmit={submitLogin}>
                         <input
                             type="text"

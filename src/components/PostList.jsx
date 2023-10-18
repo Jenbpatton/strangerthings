@@ -3,35 +3,25 @@ import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 
-const PostList = ({ posts, isGuest }) => {
+const PostList = ({ posts }) => {
     const token = localStorage.getItem('token');
     const { username } = token ? jwt_decode(token) : { username: '' };
-
     const navigate = useNavigate();
 
-    const navigateSinglePost = ({
-        _id,
-        author,
-        description,
-        price,
-        location,
-        title,
-        isAuthor,
-    }) => {
+    // Check if 'posts' is defined and is an array
+    if (!Array.isArray(posts)) {
+        return <div>No posts to display.</div>;
+    }
+
+    // Function to navigate to SinglePost page
+    const navigateSinglePost = ({ _id, author, description, price, location, title, isAuthor }) => {
         navigate('/SinglePost', {
             state: { _id, author, description, price, location, title, isAuthor },
         });
     };
 
-    const navigateSendMessage = ({
-        _id,
-        author,
-        description,
-        price,
-        location,
-        title,
-        isAuthor,
-    }) => {
+    // Function to navigate to Message page
+    const navigateSendMessage = ({ _id, author, description, price, location, title, isAuthor }) => {
         navigate('/Message', {
             state: { _id, author, description, price, location, title, isAuthor },
         });
@@ -61,7 +51,7 @@ const PostList = ({ posts, isGuest }) => {
                         {location && <h4>Location: {location}</h4>}
                     </div>
                     <div>
-                        {!isGuest && author.username !== username && (
+                        {author.username !== username && (
                             <button
                                 onClick={() =>
                                     navigateSendMessage({
@@ -99,8 +89,7 @@ PostList.propTypes = {
             title: PropTypes.string.isRequired,
             isAuthor: PropTypes.bool.isRequired,
         })
-    ).isRequired,
-    isGuest: PropTypes.bool, // Pass true for guest users, false for authenticated users
+    ),
 };
 
 export default PostList;
