@@ -1,5 +1,4 @@
 import Greeting from "../Greeting";
-import GuestWelcome from "../GuestWelcome";
 import { useOutletContext } from "react-router-dom";
 
 const Home = () => {

@@ -5,9 +5,9 @@ import Home from './components/pages/Home';
 import Profile from './components/pages/Profile';
 import UserLogin from './components/pages/Login';
 import Register from './components/pages/Register';
-import PostList from './components/PostList';  // Removed curly braces
-import Message from './components/Message';  // Updated component name
-import SinglePost from './components/Singlepost';  // Updated component name
+import PostList from './components/PostList';  
+import Message from './components/Message'; 
+import SinglePost from './components/Singlepost';  
 import Post from './components/Post';
 
 function App() {
@@ -30,8 +30,19 @@ function App() {
            </ul>
         </nav>
         <h1>Welcome to Stranger Things</h1>
-        <Route exact path="/" element= {<Home />} />
-        <Route path="/PostList" element={<PostList />} />
+        <Route path="/Home" element= {<Home />} />
+        <Route
+  path="/PostList"
+  element={
+    <PostList
+      posts={[
+        { _id: '1', title: 'Post 1', content: 'Content of Post 1' },
+        { _id: '2', title: 'Post 2', content: 'Content of Post 2' },
+    
+      ]}
+    />
+  }
+/>
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Login" element={<UserLogin />} />
