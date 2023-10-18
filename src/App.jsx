@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import MessageForm from './MessageForm';
 import MessageList from './MessageList';
 
@@ -12,7 +12,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Routes>
       <div>
         <nav>
           <ul>
@@ -35,7 +35,7 @@ function App() {
           <MessageList messages={messages} />
         </Route>
       </div>
-    </Router>
+    </Routes>
   );
 }
 
