@@ -9,29 +9,41 @@ const NewClientPost = () => {
     const [location, setLocation] = useState('');
     const [willDeliver, setWillDeliver] = useState(false);
     const [postErrorMessage, setPostErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
     const token = localStorage.getItem('token')
     const navigate = useNavigate();
 
     async function submitPost(e) {
-        e.preventDefault()
-
-        const post = {
-            post: {
-                title,
-                description,
-                price,
-                location: "[On Request]",
-                willDeliver
-            }
-        }
-
-        const response = await addNewPost(post, token);
-        console.log(response);
+        e.preventDefault();
 
         if (!title || !description || !price) {
-            setPostErrorMessage('This is required Field')
+            setPostErrorMessage('Please fill in required fields.');
         } else {
-            navigate('/PostList');
+            const post = {
+                post: {
+                    title,
+                    description,
+                    price,
+                    location: location || "[On Request]",
+                    willDeliver
+                }
+            }
+
+            try {
+                const response = await addNewPost(post, token);
+                console.log(response);
+                setSuccessMessage('Post created successfully!');
+                // Reset form fields for a new post
+                setTitle('');
+                setDescription('');
+                setPrice('');
+                setLocation('');
+                setWillDeliver(false);
+                // Optionally, you can add a delay and then clear the success message
+                setTimeout(() => setSuccessMessage(''), 3000);
+            } catch (error) {
+                console.error('Error creating a new post:', error);
+            }
         }
     }
 
@@ -39,31 +51,31 @@ const NewClientPost = () => {
         <form onSubmit={submitPost} className="panel">
             <h1>Add New Post</h1>
             <input 
-            type="text" 
-            value={title}
-            placeholder="title"
-            onChange={(e) => setTitle(e.target.value)}
+                type="text" 
+                value={title}
+                placeholder="Title"
+                onChange={(e) => setTitle(e.target.value)}
+                required
             />
-            {postErrorMessage ? <p>{postErrorMessage}</p> : null}
             <input 
-            type="text" 
-            value={description}
-            placeholder="description"
-            onChange={(e) => setDescription(e.target.value)}
+                type="text" 
+                value={description}
+                placeholder="Description"
+                onChange={(e) => setDescription(e.target.value)}
+                required
             />
-            {postErrorMessage ? <p>{postErrorMessage}</p> : null}
             <input 
-            type="text" 
-            value={price}
-            placeholder="price"
-            onChange={(e) => setPrice(e.target.value)}
+                type="text" 
+                value={price}
+                placeholder="Price"
+                onChange={(e) => setPrice(e.target.value)}
+                required
             />
-            {postErrorMessage ? <p>{postErrorMessage}</p> : null}
             <input 
-            type="text" 
-            value={location}
-            placeholder="location"
-            onChange={(e) => setLocation(e.target.value)}
+                type="text" 
+                value={location}
+                placeholder="Location (optional)"
+                onChange={(e) => setLocation(e.target.value)}
             />
             <label>
                 <input 
@@ -71,12 +83,15 @@ const NewClientPost = () => {
                     value={willDeliver}
                     onChange={() => setWillDeliver(!willDeliver)}
                 />
-                <span>Willing to Deliver?</span>
+                Willing to Deliver?
             </label>
             
             <button type="submit" className="createButton">Create</button>
+            
+            {postErrorMessage && <p className="error">{postErrorMessage}</p>}
+            {successMessage && <p className="success">{successMessage}</p>}
         </form>
-    )
+    );
 }
 
 export default NewClientPost;

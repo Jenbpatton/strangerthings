@@ -1,5 +1,4 @@
 #root {
-  text-align: center;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -7,9 +6,13 @@
 body{
   background-color:midnightblue;
   color: azure;
+  text-align: center;
 }
 .linkStyle {
   margin-right: 10px;
+}
+.header{
+  text-align: right;
 }
 .linkStyle:visited {
   color:aquamarine

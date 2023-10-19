@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { fetchAllPosts } from "../api/api";
 
@@ -28,7 +28,6 @@ export default function Root() {
     return (
         <div>
             <header>
-                <h2 className="webName">Stranger Things</h2>
                 <nav className="headerLink">
                     <Link to="home" className="linkStyle">Home</Link>
                     <Link to="postlist" className="linkStyle">Posts</Link>
