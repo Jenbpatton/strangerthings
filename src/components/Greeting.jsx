@@ -19,7 +19,7 @@ const Greeting = () => {
 
     return (
         <div className="panel">
-            <h1>Welcome to Stranger Connect!</h1>
+            <h1>Welcome to Stranger Things!</h1>
             <h2>Nice to see you again, {username}</h2>
         </div>
     );
