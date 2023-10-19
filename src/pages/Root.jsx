@@ -30,7 +30,7 @@ export default function Root() {
             <header>
                 <h2 className="webName">Stranger Things</h2>
                 <nav className="headerLink">
-                    <Link to="homepage" className="linkStyle">Home</Link>
+                    <Link to="home" className="linkStyle">Home</Link>
                     <Link to="postlist" className="linkStyle">Posts</Link>
                     {token ? <Link to="profile" className="linkStyle">Profile</Link> : null}
                     {!token && (
