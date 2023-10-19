@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import { editPost, deletePost } from '../api/api';
 
-const PostDetailsAndEdit = () => {
+const SinglePost = () => {
     // Get post details from location state
     const { state } = useLocation();
     const { _id } = state;
@@ -127,4 +127,4 @@ const PostDetailsAndEdit = () => {
     );
 };
 
-export default PostDetailsAndEdit;
+export default SinglePost;

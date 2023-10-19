@@ -39,6 +39,7 @@ const Post = () => {
 
     // Function to navigate to the NewClientPost page
     const navigateAddNewPost = () => {
+        console.log('Add New Post button clicked');
         navigate('/NewClientPost');
     };
 

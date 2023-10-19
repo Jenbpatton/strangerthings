@@ -3,10 +3,8 @@ import { useOutletContext } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 
 const Greeting = () => {
-    // Accessing the user token from context
     const [token] = useOutletContext();
 
-    // Initialize the username
     let username = '';
 
     try {
@@ -20,7 +18,7 @@ const Greeting = () => {
     return (
         <div className="panel">
             <h1>Welcome to Stranger Things!</h1>
-            <h2>Nice to see you again, {username}</h2>
+            <h2>Hope You are having a nice day, {username}</h2>
         </div>
     );
 };

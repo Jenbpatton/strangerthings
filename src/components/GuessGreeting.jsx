@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const GuestLogin = () => {
+const GuestGreeting = () => {
     const navigate = useNavigate();
     const navigateLogin = () => {
         navigate('/login');
@@ -14,4 +14,4 @@ const GuestLogin = () => {
     )
 };
 
-export default GuestLogin;
+export default GuestGreeting;

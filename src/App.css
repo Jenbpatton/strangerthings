@@ -42,3 +42,23 @@ button {
   will-change: filter;
   transition: filter 300ms;
 }
+.functionalButton {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #646cff; /* New button background color */
+  color: #fff; /* New button text color */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.functionalButton:hover {
+  background-color: #535bf2; /* Background color on hover */
+}
+
+.functionalButton:focus {
+  outline: none; /* Remove the default focus outline */
+}

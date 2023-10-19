@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchAllPosts } from "../api/api";
-import PostList from './PostList';
+import GuestPostList from './GuestPostList';
 
 const GuestPost = () => {
     const [posts, setPosts] = useState([]);
@@ -20,7 +20,7 @@ const GuestPost = () => {
     return (
         <div className="container">
             <h1>Welcome Guest!</h1>
-            <PostList posts={posts} />
+            <GuestPostList posts={posts} />
         </div>
     );
 };
