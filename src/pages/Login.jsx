@@ -35,7 +35,7 @@ const UserLogin = () => {
     return (
         <div className="panel">
             {isLoggedIn ? (
-                <h1>Hello!  Nice to see you again!</h1>
+                <h1>Hello!  Welcome Back!</h1>
             ) : (
                 <>
                     <h1>Login</h1>
