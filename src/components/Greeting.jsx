@@ -18,7 +18,7 @@ const Greeting = () => {
     return (
         <div className="panel">
             <h1>Welcome to Stranger Things!</h1>
-            <h2>Hope You are having a nice day, {username}</h2>
+            <h2>Hope you are having a nice day, {username}</h2>
         </div>
     );
 };
