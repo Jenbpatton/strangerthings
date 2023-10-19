@@ -9,7 +9,8 @@ import SinglePost from './components/SinglePost';
 import Root from './pages/Root';
 import NewClientPost from './components/NewClientPost';
 import Login from './pages/Login';
-import PostList from './components/PostList';
+import PostList from './pages/PostList';
+
 
 const router = createBrowserRouter([
   {

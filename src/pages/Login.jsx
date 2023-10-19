@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { userLogin } from '../api/api';
 import { useOutletContext } from 'react-router-dom';
 
-const UserLogin = () => {
+const Login = () => {
     // Initialize state variables
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -66,4 +66,4 @@ const UserLogin = () => {
     );
 };
 
-export default UserLogin;
+export default Login;

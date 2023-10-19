@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
-import PostList from './PostList';
+import PostList from '../pages/PostList';
 import { fetchAllPosts } from '../api/api';
 
 const Post = () => {
